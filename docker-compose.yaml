@@ -1,0 +1,14 @@
+version: "3"
+services:
+  react:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /usr/src/app/node_modules
+      # Volume으로 local 파일의 추적은 잘 수행됨
+      # 하지만 React 앱이 reload 하지 못하는 문제 발생
+      - ./:/usr/src/app/
+    stdin_open: true
