@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import dockerLogo from './docker_logo.png';
 import './App.css';
 import axios from 'axios';
@@ -52,8 +51,8 @@ function App() {
       <header className="App-header">
         <img src={dockerLogo} className="App-logo" alt="logo" />
         Docker를 통해 React, Node, MySQL 앱을 배포합니다!
-        <br />
         <div className="container">
+
           {lists && lists.map((list, index) => (
             <li key={index}>{list.value} </li>
           ))}
@@ -65,7 +64,7 @@ function App() {
               onChange={changeHandler}
               value={value}
             />
-            <button type="submit">SUB</button>
+            <button type="submit">확인.</button>
           </form>
         </div>
       </header>
